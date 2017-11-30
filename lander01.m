@@ -5,7 +5,7 @@ printf("Lunar Lander version 1.0\n")
 printf("**************************")
 
 %Random whole number altitude between 0-100:
-x_0=ceil(10*rand(1))+90;
+x_0 = ceil(10*rand(1))+90;
 v_0 = rand(1); %Initial velocity in meter/second
 %Ma=0.1;
 %gamma=1.3;
@@ -32,11 +32,13 @@ printf("The shuttle has a mass of %d [kg] and has an initial fuel mass of %1.3f\
 %User input and loop
 x_now=x_0;
 v_now=v_0;
-x_values=[];
+x_values=[x_0];
 instance=0;
 while(x_now>=0)
   m_burn = input("Enter mass of fuel you wish to burn [kg]: "); %User input
   burn_time = input("Enter burn time [second]: "); %User input
+%  m_burn=5;
+%  burn_time=1;
   t=burn_time;
   mdot = m_burn/t;
   printf("Current fuel consumption rate is %1.3f [kg/s] \n", mdot)
@@ -64,7 +66,6 @@ while(x_now>=0)
   v_now = v_next;
   m_fuel_prev = m_fuel_now;
   x_values = [x_values, x_now];
-  
   
     if((m_fuel_now==0 && x_now > 0) || m_fuel_now<0 || x_now<0)
      printf("CRASH!\n\n");
