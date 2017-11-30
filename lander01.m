@@ -54,10 +54,10 @@ while(x_now>=0)
   m_prev=m_now;
     if(instance==0)
       m_fuel_now = mass_fuelTotal-m_burn;
-      printf("Current altitude is %1.3f and the amount of fuel left is %1.3f\n", x_now, m_fuel_now)
+      printf("Current altitude is %1.3f and the amount of fuel left is %1.3f\n", x_next, m_fuel_now)
     else
       m_fuel_now = m_fuel_prev - m_burn  ;
-      printf("Current altitude is %1.3f and the amount of fuel left is %1.3f\n", x_now, m_fuel_now)
+      printf("Current altitude is %1.3f and the amount of fuel left is %1.3f\n", x_next, m_fuel_now)
     endif  
   instance=1;    
   x_now = x_next;
