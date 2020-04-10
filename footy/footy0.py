@@ -7,7 +7,7 @@ import time
 import matplotlib.pyplot as plt
 import pdb
 
-import selectTeam
+import selectTeam as selectTeam
 
 nSamples = 4000; #This should be defined as a global variable
 
@@ -74,11 +74,12 @@ between two teams
 nGames = int(input("How many games in the tournament? (minimum 1) "))
 if(nGames == 1):
     #strength_factor = np.round(np.max(selectTeam.team_1.rank, selectTeam.team_2.rank)/np.min(selectTeam.team_1.rank,       selectTeam.team_2.rank))
-    strength_factor = nSamples/100
+    strength_factor = nSamples/2000
     #print(delta(selectTeam.team_1.rank, selectTeam.team_2.rank))
     team_strength = 0.5*nSamples + strength_factor*delta(selectTeam.team_1.rank, selectTeam.team_2.rank); #relative rank  
     #gp = np.int32(elative_rank(selectTeam.team_1.rank, selectTeam.team_2.rank)); #goal potential
     gp = np.int(7 - selectTeam.team_1.defensive_tendency - selectTeam.team_2.defensive_tendency + selectTeam.team_1.attacking_tendency + selectTeam.team_2.attacking_tendency);
+    #gp=7
     #print('--------------')
     #print('Team strength: ', team_strength)
     #print('\n')
@@ -86,17 +87,21 @@ if(nGames == 1):
     #print('--------------')
     football_match(team_strength, gp)   
 else:
-    strength_factor = nSamples/100
+    strength_factor = nSamples/2000
     #pdb.set_trace()
     #print(delta(selectTeam.team_1.rank, selectTeam.team_2.rank))
     team_strength = 0.5*nSamples + strength_factor*delta(selectTeam.team_1.rank, selectTeam.team_2.rank); #relative rank  
     #gp = np.int32(relative_rank(selectTeam.team_1.rank, selectTeam.team_2.rank)); #goal potential
     gp = np.int(7 - selectTeam.team_1.defensive_tendency - selectTeam.team_2.defensive_tendency + selectTeam.team_1.attacking_tendency + selectTeam.team_2.attacking_tendency);
+    #gp=7
     #print('--------------')
     #print('Team strength: ', team_strength)
     #print('\n')
     #print('Goal potential: ', gp)
     #print('--------------')
     for i in range(nGames):
-        football_match(team_strength, gp)       
+        print('\n\nThis is game ', i+1)
+        print('\nThe whistle blows and the game starts!')
+        football_match(team_strength, gp)      
+        time.sleep(1)
 #eof
