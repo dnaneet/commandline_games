@@ -76,7 +76,7 @@ if(nGames == 1):
     #strength_factor = np.round(np.max(selectTeam.team_1.rank, selectTeam.team_2.rank)/np.min(selectTeam.team_1.rank,       selectTeam.team_2.rank))
     strength_factor = nSamples/2000
     #print(delta(selectTeam.team_1.rank, selectTeam.team_2.rank))
-    team_strength = 0.5*nSamples + strength_factor*delta(selectTeam.team_1.rank, selectTeam.team_2.rank); #relative rank  
+    team_strength = 0.5*nSamples + strength_factor*delta(selectTeam.team_1.rank, selectTeam.team_2.rank);  
     #gp = np.int32(elative_rank(selectTeam.team_1.rank, selectTeam.team_2.rank)); #goal potential
     gp = np.int(7 - selectTeam.team_1.defensive_tendency - selectTeam.team_2.defensive_tendency + selectTeam.team_1.attacking_tendency + selectTeam.team_2.attacking_tendency);
     #gp=7
