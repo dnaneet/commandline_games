@@ -1,0 +1,8 @@
+Chelsea : [1] Paris Saint-Germain : [0] (p)
+Liverpool : [1] Sevilla FC : [2]
+Braga : [0] Lazio : [1]
+Bayern Munich : [1] Atalanta : [0] (p)
+Borussia Dortmund : [0] Real Sociedad : [2] (p)
+Atletico Madrid : [4] Juventus : [0]
+Manchester United : [0] Barcelona : [2] (p)
+Real Madrid : [1] RB Leipzig : [4]
