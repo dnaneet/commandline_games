@@ -80,7 +80,7 @@ def football_match(ts, g, team_1_advance, team_2_advance, team_1_name, team_2_na
     while(team_1_score == team_2_score):
         team_1_score = np.random.randint([3])
         team_2_score = np.random.randint([3])
-    #print(team_1_name, ':', team_1_score, team_2_name, ':', team_2_score, '(p)', file=f1)
+    print(team_1_name, ':', team_1_score, team_2_name, ':', team_2_score, '(p)', file=f1)
     print(team_1_name, ':', team_1_score, team_2_name, ':', team_2_score, '(p)') #final scoreline is presented    
     return team_1_score, team_2_score
 
@@ -152,13 +152,17 @@ while(round <= len(df) - 1):
             team_2_advance = np.array([0])
             print(team_1_name, 'vs',  team_2_name, '\n\n')
             print('\nThe whistle blows and the game starts!')
-            time.sleep(1)
+            time.sleep(.1)
             strength_factor = nSamples/2000
             team_strength = 0.5*nSamples + strength_factor*delta(team_1_rank, team_2_rank)
             gp = np.int(7 - team_1_dfx - team_2_dfx + team_1_atx + team_2_atx);
             t1_score, t2_score = football_match(team_strength, gp, team_1_advance, team_2_advance, team_1_name, team_2_name)
-            if(t1_score > t2_score): next_round = np.append(next_round, team_1_name)
-            else: next_round = np.append(next_round, team_2_name)        
+            if(t1_score > t2_score): 
+                next_round = np.append(next_round, team_1_name)
+                champs = team_1_name
+            else: 
+                next_round = np.append(next_round, team_2_name)        
+                champs = team_2_name
             #print("this is t1 score: ", t1_score)
             #print("this is t2 score: ", t2_score)    
             input("Press Enter to continue...\n\n")
@@ -167,4 +171,10 @@ while(round <= len(df) - 1):
     matches_in_this_round = int(matches_in_this_round/2) #next round has half the matches of previous round
     j=0;        
 
+print('\n')
+print('****************')
+print('This is it!!!')
+time.sleep(.6)
+print(champs, ' are the Champions!')
+print('****************')
 #eof
