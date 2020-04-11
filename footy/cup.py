@@ -50,11 +50,16 @@ def football_match(ts, g, team_1_advance, team_2_advance, team_1_name, team_2_na
         team_1_advance= np.append(team_1_advance,[0], axis=0)
         team_2_advance= np.append(team_2_advance,[1], axis=0)  
     #n=np.int(0.5*g + np.random.randint(5))
-    n = g
-    if(np.cumsum(team_1_advance[-n:])[-1]>=n):
+    g1 = g
+    g2 = g
+    n1 = g1
+    n2 = g2
+    if(np.cumsum(team_1_advance[-n1:])[-1]>=n1):
         team_1_score = team_1_score + 1
-    if(np.cumsum(team_2_advance[-n:])[-1]>=n):        
+        g1 = g1 + 1
+    if(np.cumsum(team_2_advance[-n2:])[-1]>=n2):        
         team_2_score = team_2_score + 1 #end loop
+        g2 = g2 + 1     
     
     if(i%30 == 0): print('Minute #:',i , team_1_name, ':', team_1_score, team_2_name, ':', team_2_score)    
 
