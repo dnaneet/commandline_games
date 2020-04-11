@@ -1,0 +1,117 @@
+List of games:
+
+    game number         team 1               team 2
+0            1        Chelsea  Paris Saint-Germain
+1            2      Liverpool           Sevilla FC
+2            3          Braga                Lazio
+3            4  Bayern Munich             Atalanta
+
+
+This is match day: 1 of round  1
+Chelsea vs Paris Saint-Germain 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Chelsea : [0] Paris Saint-Germain : [0]
+Minute #: 45 Chelsea : [0] Paris Saint-Germain : [0]
+Chelsea : [3] Paris Saint-Germain : [0]
+Press Enter to continue...
+
+
+
+
+This is match day: 2 of round  1
+Liverpool vs Sevilla FC 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Liverpool : [0] Sevilla FC : [0]
+Minute #: 45 Liverpool : [0] Sevilla FC : [0]
+Minute #: 90 Liverpool : [2] Sevilla FC : [0]
+Liverpool : [2] Sevilla FC : [0]
+Press Enter to continue...
+
+
+
+
+This is match day: 3 of round  1
+Braga vs Lazio 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Braga : [0] Lazio : [0]
+Minute #: 45 Braga : [0] Lazio : [0]
+Minute #: 90 Braga : [1] Lazio : [0]
+Braga : [1] Lazio : [0]
+Press Enter to continue...
+
+
+
+
+This is match day: 4 of round  1
+Bayern Munich vs Atalanta 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Bayern Munich : [0] Atalanta : [0]
+Minute #: 45 Bayern Munich : [0] Atalanta : [1]
+Minute #: 90 Bayern Munich : [0] Atalanta : [1]
+Bayern Munich : [0] Atalanta : [1]
+Press Enter to continue...
+
+
+
+
+This is match day: 1 of round  2
+Chelsea vs Liverpool 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Chelsea : [0] Liverpool : [0]
+Minute #: 45 Chelsea : [0] Liverpool : [1]
+Minute #: 90 Chelsea : [0] Liverpool : [1]
+Chelsea : [0] Liverpool : [1]
+Press Enter to continue...
+
+
+
+
+This is match day: 2 of round  2
+Braga vs Atalanta 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Braga : [0] Atalanta : [0]
+Minute #: 45 Braga : [0] Atalanta : [0]
+Minute #: 90 Braga : [0] Atalanta : [0]
+Braga : [2] Atalanta : [1] (p)
+Press Enter to continue...
+
+
+
+
+This is match day: 1 of round  3
+Liverpool vs Braga 
+
+
+
+The whistle blows and the game starts!
+Minute #: 0 Liverpool : [0] Braga : [0]
+Minute #: 45 Liverpool : [0] Braga : [0]
+Liverpool : [2] Braga : [0]
+Press Enter to continue...
+
+
+
+
+****************
+This is it!!!
+Liverpool  are the Champions!
+****************
+
