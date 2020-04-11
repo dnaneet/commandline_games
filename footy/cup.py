@@ -55,6 +55,8 @@ def football_match(ts, g, team_1_advance, team_2_advance, team_1_name, team_2_na
         team_1_score = team_1_score + 1
     if(np.cumsum(team_2_advance[-n:])[-1]>=n):        
         team_2_score = team_2_score + 1 #end loop
+    
+    if(i%30 == 0): print('Minute #:',i , team_1_name, ':', team_1_score, team_2_name, ':', team_2_score)    
 
   #score tallying  
   #pdb.set_trace()
