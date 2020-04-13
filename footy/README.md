@@ -2,4 +2,4 @@
 
  - Ensure you have `python3`, `numpy` and `pandas` installed
  - Download the files, uncompress and `cd` into the directory
- - Run with `python3 cup3.py`
+ - The most recent version of this simulator is run with `python3 cup4.py`
