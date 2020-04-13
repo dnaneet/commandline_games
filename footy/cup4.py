@@ -13,7 +13,8 @@ import pdb
 '''
 Function definitions
 '''
-nSamples = 4000; #This should be defined as a global variable
+nSamples = 4000; #This should be defined as a global variable.  This is the number
+                 #of simulations run at each time.
 
 '''
 Calculation of relative rank:
@@ -57,8 +58,8 @@ def football_match(ts, g, team_1_advance, team_2_advance, team_1_name, team_2_na
   for i in range(89 + added_time): #begin loop
     p = np.random.randint(nSamples)
     if(p>=ts):
-        team_1_advance = np.append(team_1_advance,[1], axis=0)
-        team_2_advance= np.append(team_2_advance,[0], axis=0)
+        team_1_advance = np.append(team_1_advance,[1], axis=0) #team 1 possession
+        team_2_advance= np.append(team_2_advance,[0], axis=0) #team 2 possession
     else:
         team_1_advance= np.append(team_1_advance,[0], axis=0)
         team_2_advance= np.append(team_2_advance,[1], axis=0)  
@@ -79,7 +80,7 @@ def football_match(ts, g, team_1_advance, team_2_advance, team_1_name, team_2_na
     if(i%15 == 0): print('Minute #:',i , team_1_name, ':', team_1_score, team_2_name, ':', team_2_score)    
 
   #score tallying  
-  if((team_1_score >=7 or team_2_score >=7) and (team_1_score == team_2_score)): 
+  if((team_1_score >=7 or team_2_score >=7) and (team_1_score == team_2_score)): #To manage unrealistic scorelines
     team_1_score = np.random.randint([3])
     team_2_score = np.random.randint([3])
     
@@ -96,15 +97,15 @@ def football_match(ts, g, team_1_advance, team_2_advance, team_1_name, team_2_na
     print(team_1_name, ':', team_1_score, team_2_name, ':', team_2_score) #final scoreline is presented
     return team_1_score, team_2_score, team_1_advance, team_2_advance #final scores and "possession" are returned 
   elif(team_1_score == team_2_score):
-    while(team_1_score == team_2_score):
-        team_1_score = np.random.randint([3])
-        team_2_score = np.random.randint([3])
+    while(team_1_score == team_2_score):#penalty shootout
+        team_1_score = np.random.randint([5])
+        team_2_score = np.random.randint([5])
     print(team_1_name, ':', team_1_score, team_2_name, ':', team_2_score, '(p)', file=f1)
     print(team_1_name, ':', team_1_score, team_2_name, ':', team_2_score, '(p)') #final scoreline is presented    
     return team_1_score, team_2_score, team_1_advance, team_2_advance #final scores and "possession" are returned
 
 '''
-Import full SPI data
+Import 538 SPI data
 '''
 
 os.system('clear')
@@ -132,7 +133,7 @@ Knock-out cup simulation
 '''
 
 #df = pd.read_csv('match_listing_4.csv')
-df = pd.read_csv('league_trophy_8.csv')
+df = pd.read_csv('league_trophy_8.csv') #match listing for first round.
 print('\n\nList of matches imported')
 time.sleep(1)
 print('\nList of games for the league trophy:\n\n', df)
@@ -181,7 +182,7 @@ while(round <= nTotalRounds):
             #strength_factor = strength_factor_evaluate(float(team_1_rank), float(team_2_rank), nSamples)
             strength_factor = nSamples/2000
             team_strength = 0.5*nSamples + np.abs(team_1_rank - team_2_rank)*strength_factor*delta(team_1_rank, team_2_rank)
-            gp = np.int(7 - team_1_dfx - team_2_dfx + team_1_atx + team_2_atx);
+            gp = np.int(7 - team_1_dfx - team_2_dfx + team_1_atx + team_2_atx); #number of minutes of continuous possession which leads to a goal.  THIS NEEDS IMPROVED DEFINITION!
             t1_score, t2_score, t1_possession, t2_possession = football_match(team_strength, gp, team_1_advance, team_2_advance, team_1_name, team_2_name)
             if(t1_score > t2_score): 
                 next_round = np.append(next_round, team_1_name)
